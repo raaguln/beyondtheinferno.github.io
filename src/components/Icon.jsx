@@ -4,7 +4,7 @@ import styles from './Icon.module.css'
 
 const Icon = ({ id, link, icon, alt, springs }) => {
   return (
-    <a.a href={ link } target='_blank' rel='noreferrer'
+    <a.a className={styles.container} href={ link } target='_blank' rel='noreferrer'
       style={{
         opacity: springs[id].opacity,
         transform: springs[id].transform.interpolate(y => `translate(0, ${y}px)`)

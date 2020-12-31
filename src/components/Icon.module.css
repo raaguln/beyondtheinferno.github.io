@@ -1,5 +1,32 @@
+.container {
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .icon {
   width: 5vmin;
   padding: 0.3rem 1rem;
   cursor: pointer;
+}
+
+.container:nth-child(3) .icon {
+  margin-top: 2px;
+}
+
+.container:nth-child(1):hover {
+  background-color: #CA4DAF52;
+}
+
+.container:nth-child(2):hover {
+  background-color: #3a86ff52;
+}
+
+.container:nth-child(3):hover {
+  background-color: #03071e52;
+}
+
+.container:nth-child(4):hover {
+  background-color: #F7D78352;
 }
