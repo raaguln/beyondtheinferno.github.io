@@ -3,6 +3,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.15s ease-in-out;
 }
 
 .icon {
@@ -28,5 +29,5 @@
 }
 
 .container:nth-child(4):hover {
-  background-color: #F7D78352;
+  background-color: #FF8C5052;
 }
