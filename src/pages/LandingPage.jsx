@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useTrail, animated as a, config } from 'react-spring'
 import { getClusterData } from '../utils/getData'
 import SVGText from '../components/SVGText'
 import Icon from '../components/Icon'
 import LinkedinIcon from '../assets/linkedin.svg'
 import GithubIcon from '../assets/github.svg'
 import ResumeIcon from '../assets/file.svg'
+import MailIcon from '../assets/mail.svg'
 import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
@@ -26,20 +28,45 @@ const LandingPage = () => {
       link: 'https://github.com/beyondtheinferno',
       icon: GithubIcon,
       alt: 'Github'
-    }
+    },
+    {
+      link: 'mailto:raagul72@gmail.com',
+      icon: MailIcon,
+      alt: 'Email'
+    },
   ]
 
-  let [{ circles, radius, color }] = useState(() => getClusterData())
+  const [{ circles, radius, color }] = useState(() => getClusterData())
 
-  let getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
+  const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
 
-  let [startAnimation, setStartAnimation] = useState(false)
+  const [startAnimation, setStartAnimation] = useState(false)
+
+  const [springs, setSprings] = useTrail(
+    icons.length,
+    () => ({
+      transform: -20,
+      opacity: 0,
+      config: config.molasses
+    }),
+  )
 
   useEffect(() => {
     setTimeout(() => {
       setStartAnimation(true)
     }, 500)
   }, [])
+
+  useEffect(() => {
+    if(startAnimation) {
+      setTimeout(() => {
+        setSprings({
+          transform: 0,
+          opacity: 1,
+        })
+      }, 3000)
+    }
+  }, [startAnimation])
 
   return(
     <div className={styles.container}>
@@ -77,7 +104,9 @@ const LandingPage = () => {
         icons.map((icon, i) => (
           <Icon
             key={i}
+            id={i}
             {...icon}
+            springs={springs}
           />
         ))
       }
