@@ -3,6 +3,7 @@ import { useTrail, animated as a, config } from 'react-spring'
 import { getClusterData } from '../utils/getData'
 import SVGText from '../components/SVGText'
 import Icon from '../components/Icon'
+import DarkModeToggle from '../components/DarkModeToggle'
 import LinkedinIcon from '../assets/linkedin.svg'
 import GithubIcon from '../assets/github.svg'
 import ResumeIcon from '../assets/file.svg'
@@ -70,6 +71,7 @@ const LandingPage = () => {
 
   return(
     <div className={styles.container}>
+      <DarkModeToggle />
       <svg className={styles.svg} viewBox={`0, 0, ${width}, ${height}`} preserveAspectRatio='xMidYMid meet'>
         <defs>
           <clipPath id='name'>

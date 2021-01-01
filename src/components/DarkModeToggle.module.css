@@ -1,0 +1,25 @@
+.button {
+  /* Reset default CSS */
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  font-family: sans-serif;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Styling */
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 4vmin;
+}

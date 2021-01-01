@@ -5,8 +5,8 @@ import KineticTypography from './components/KineticTypography'
 function App() {
   return (
     <div className={styles.App}>
-      {/* <LandingPage /> */}
-      <KineticTypography />
+      <LandingPage />
+      {/* <KineticTypography /> */}
     </div>
   )
 }
