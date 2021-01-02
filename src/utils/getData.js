@@ -2,7 +2,7 @@ import { packSiblings, scaleOrdinal, scaleLinear } from "d3"
 
 export const getClusterData = () => {
   // 5000 nodes for larger screens
-  let data = new Array(5000).fill().map(() => ({r: 6}))
+  let data = new Array(3000).fill().map(() => ({r: 6}))
   let circles = packSiblings(data)
 
   let radius = scaleLinear()

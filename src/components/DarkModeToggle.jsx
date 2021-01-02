@@ -1,43 +1,23 @@
-import React, { useState } from 'react'
-import { useTransition, animated as a } from 'react-spring'
+import React from 'react'
+import useDarkMode from 'use-dark-mode'
 import Sun from '../assets/sun.svg'
 import Moon from '../assets/moon.svg'
 import styles from './DarkModeToggle.module.css'
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false)
-
-  const transitions = useTransition(darkMode, null, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-  })
+  const darkMode = useDarkMode(false)
 
   return (
     <button
       className={styles.button}
-      style={{ backgroundColor: darkMode ? '#262626' : '#F7D78352' }}
-      onClick={() => setDarkMode((prev) => !prev)}
+      style={{ backgroundColor: darkMode.value ? '#262626' : '#F7D78352' }}
+      onClick={darkMode.toggle}
     >
-    {
-      transitions.map(({ item, props }, i) =>
-      item
-        ? <a.img
-            key={i}
-            className={styles.image}
-            src={Moon}
-            alt='Dark mode toggle'
-            style={props}
-          />
-        : <a.img
-            key={i}
-            className={styles.image}
-            src={Sun}
-            alt='Dark mode toggle'
-            style={props}
-          />
-      )
-    }
+      <img
+        className={styles.image}
+        src={darkMode.value ? Moon : Sun}
+        alt='Dark mode toggle'
+      />
     </button>
   )
 }

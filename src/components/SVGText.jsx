@@ -1,6 +1,7 @@
 import React from 'react'
+import useDarkMode from 'use-dark-mode'
 
-const SVGText = ({ x, y }) => {
+const SVGText = ({ x, y, darkMode = false }) => {
   return (
     <text
       x={x}
@@ -9,8 +10,8 @@ const SVGText = ({ x, y }) => {
       dominantBaseline='middle'
       fontSize='120px'
       fontWeight= '900'
-      stroke='black'
-      fill='white'
+      stroke={ darkMode ? 'white' : 'black' }
+      fill={ darkMode ? '#1A1A1A' : 'white' }
     >
       RAAGUL N.
     </text>
