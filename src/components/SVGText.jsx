@@ -1,5 +1,4 @@
 import React from 'react'
-import useDarkMode from 'use-dark-mode'
 
 const SVGText = ({ x, y, darkMode = false }) => {
   return (

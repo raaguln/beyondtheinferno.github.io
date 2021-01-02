@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useTrail, animated as a, config } from 'react-spring'
+import { useTrail, config } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
 import { getClusterData } from '../utils/getData'
 import SVGText from '../components/SVGText'

@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useSpring, animated as a, config } from 'react-spring'
 import styles from './KineticTypography.module.css'
 
 const KineticTypography = () => {
-
-  const width = 1200,
-        height = 1200
 
   const [anim, setAnim] = useSpring(() => ({
     transform: [0, 0, 1.8],
