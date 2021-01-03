@@ -1,21 +1,18 @@
 import React from 'react'
-import useDarkMode from 'use-dark-mode'
 import Sun from '../assets/sun.svg'
 import Moon from '../assets/moon.svg'
 import styles from './DarkModeToggle.module.css'
 
-const DarkModeToggle = () => {
-  const darkMode = useDarkMode(false)
-
+const DarkModeToggle = ({ darkMode, darkModeToggle }) => {
   return (
     <button
       className={styles.button}
-      style={{ backgroundColor: darkMode.value ? '#262626' : '#F7D78352' }}
-      onClick={darkMode.toggle}
+      style={{ backgroundColor: darkMode ? '#262626' : '#F7D78372' }}
+      onClick={ darkModeToggle }
     >
       <img
         className={styles.image}
-        src={darkMode.value ? Moon : Sun}
+        src={ darkMode ? Moon : Sun }
         alt='Dark mode toggle'
       />
     </button>

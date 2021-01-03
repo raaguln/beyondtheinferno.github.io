@@ -16,7 +16,10 @@ import MailLight from '../assets/mail-light.svg'
 import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
-  const {value: darkMode} = useDarkMode()
+  const {
+    value: darkMode,
+    toggle: darkModeToggle
+  } = useDarkMode()
 
   const width = 800,
         height = 120
@@ -78,10 +81,13 @@ const LandingPage = () => {
 
   return(
     <div className={styles.container}>
-      <DarkModeToggle />
+      <DarkModeToggle
+        darkMode={darkMode}
+        darkModeToggle={darkModeToggle}
+      />
       <svg className={styles.svg} viewBox={`0, 0, ${width}, ${height}`} preserveAspectRatio='xMidYMid meet'>
         <defs>
-          <clipPath id='name'>
+          <clipPath id='myName'>
             <SVGText
               x={width / 2}
               y={height / 2}
@@ -93,7 +99,12 @@ const LandingPage = () => {
           y={height / 2}
           darkMode={darkMode}
         />
-        <g className={styles.circleContainer} clipPath="url(#name)">
+        <g className={styles.circleContainer}
+          style={{
+            isolation: 'isolate'
+          }}
+          // clipPath="url(#myName)"
+        >
         {
           circles.map(({x, y }, i) => (
             <circle

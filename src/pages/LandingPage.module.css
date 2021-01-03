@@ -14,7 +14,7 @@
 }
 
 .circleContainer {
-  isolation: 'isolate';
+  clip-path: url(#myName);
 }
 
 .circle {

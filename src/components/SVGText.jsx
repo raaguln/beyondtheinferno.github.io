@@ -9,8 +9,11 @@ const SVGText = ({ x, y, darkMode = false }) => {
       dominantBaseline='middle'
       fontSize='120px'
       fontWeight= '900'
-      stroke={ darkMode ? 'white' : 'black' }
-      fill={ darkMode ? '#1A1A1A' : 'white' }
+      stroke={ darkMode ? '#fafafa' : '#1A1A1A' }
+      fill='none'
+      style={{
+        transition: 'fill 0.2s ease-in, stroke 0.2s ease-in'
+      }}
     >
       RAAGUL N.
     </text>

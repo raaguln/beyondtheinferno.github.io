@@ -16,17 +16,17 @@
 }
 
 .container:nth-child(1):hover {
-  background-color: #CA4DAF52;
+  background-color: #CA4DAF72;
 }
 
 .container:nth-child(2):hover {
-  background-color: #3a86ff52;
+  background-color: #3a86ff72;
 }
 
 .container:nth-child(3):hover {
-  background-color: #26262652;
+  background-color: #8d99ae72;
 }
 
 .container:nth-child(4):hover {
-  background-color: #FF8C5052;
+  background-color: #FF8C5072;
 }
