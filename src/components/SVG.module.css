@@ -1,0 +1,13 @@
+.svg {
+  /* Support for the vintage */
+  width: 100%;
+  height: auto;
+}
+
+.circleContainer {
+  clip-path: url(#myName);
+}
+
+.circle {
+  transition: r 3s ease-out;
+}

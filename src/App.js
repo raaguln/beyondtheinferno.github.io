@@ -1,8 +1,9 @@
+import React from 'react'
 import LandingPage from './pages/LandingPage'
+import KineticTypography from './pages/KineticTypography'
 import styles from './App.module.css'
-import KineticTypography from './components/KineticTypography'
 
-function App() {
+const App = () => {
   return (
     <div className={styles.App}>
       <LandingPage />

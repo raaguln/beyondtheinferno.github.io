@@ -1,9 +1,8 @@
 import React from 'react'
-import Sun from '../assets/sun.svg'
-import Moon from '../assets/moon.svg'
-import styles from './DarkModeToggle.module.css'
+import { Sun, Moon } from '../assets/icons'
+import styles from './Toggle.module.css'
 
-const DarkModeToggle = ({ darkMode, darkModeToggle }) => {
+const Toggle = ({ darkMode, darkModeToggle }) => {
   return (
     <button
       className={styles.button}
@@ -19,4 +18,4 @@ const DarkModeToggle = ({ darkMode, darkModeToggle }) => {
   )
 }
 
-export default DarkModeToggle
+export default Toggle

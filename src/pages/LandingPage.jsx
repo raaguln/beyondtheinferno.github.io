@@ -2,17 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { useTrail, config } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
 import { getClusterData } from '../utils/getData'
-import SVGText from '../components/SVGText'
-import Icon from '../components/Icon'
-import DarkModeToggle from '../components/DarkModeToggle'
-import Linkedin from '../assets/linkedin.svg'
-import LinkedinLight from '../assets/linkedin-light.svg'
-import Github from '../assets/github.svg'
-import GithubLight from '../assets/github-light.svg'
-import Resume from '../assets/file.svg'
-import ResumeLight from '../assets/file-light.svg'
-import Mail from '../assets/mail.svg'
-import MailLight from '../assets/mail-light.svg'
+import { SVG, Icon, Toggle } from '../components'
+import {
+  Linkedin, LinkedinLight, Github, GithubLight,
+  Resume, ResumeLight, Mail, MailLight
+} from '../assets/icons'
 import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
@@ -21,8 +15,7 @@ const LandingPage = () => {
     toggle: darkModeToggle
   } = useDarkMode()
 
-  const width = 800,
-        height = 120
+  const [data] = useState(() => getClusterData())
 
   const icons = [
     {
@@ -47,20 +40,13 @@ const LandingPage = () => {
     },
   ]
 
-  const [{ circles, radius, color }] = useState(() => getClusterData())
-
-  const getRandomArbitrary = (min, max) => Math.random() * (max - min) + min
-
   const [startAnimation, setStartAnimation] = useState(false)
 
-  const [springs, setSprings] = useTrail(
-    icons.length,
-    () => ({
-      transform: -20,
-      opacity: 0,
-      config: config.molasses
-    }),
-  )
+  const [springs, setSprings] = useTrail(icons.length, () => ({
+    transform: -20,
+    opacity: 0,
+    config: config.molasses
+  }))
 
   useEffect(() => {
     setTimeout(() => {
@@ -79,58 +65,26 @@ const LandingPage = () => {
     }
   }, [startAnimation])
 
+  const svgProps = {
+    ...data,
+    darkMode,
+    startAnimation
+  }
+
   return(
     <div className={styles.container}>
-      <DarkModeToggle
+      <Toggle
         darkMode={darkMode}
         darkModeToggle={darkModeToggle}
       />
-      <svg className={styles.svg} viewBox={`0, 0, ${width}, ${height}`} preserveAspectRatio='xMidYMid meet'>
-        <defs>
-          <clipPath id='myName'>
-            <SVGText
-              x={width / 2}
-              y={height / 2}
-            />
-          </clipPath>
-        </defs>
-        <SVGText
-          x={width / 2}
-          y={height / 2}
-          darkMode={darkMode}
-        />
-        <g className={styles.circleContainer}
-          style={{
-            isolation: 'isolate'
-          }}
-          // clipPath="url(#myName)"
-        >
-        {
-          circles.map(({x, y }, i) => (
-            <circle
-              key={i}
-              className={styles.circle}
-              cx={x}
-              cy={y}
-              transform={`translate(${width / 2}, ${height / 2})`}
-              r={startAnimation ? radius(getRandomArbitrary(0, 5)) : 0}
-              fill={color(getRandomArbitrary(0, 7))}
-              style={{
-                mixBlendMode: darkMode ? 'multiply' : 'screen'
-              }}
-            />
-          ))
-        }
-        </g>
-      </svg>
+      <SVG {...svgProps} />
       <div className={styles.links}>
       {
         icons.map((icon, i) => (
           <Icon
             key={i}
-            id={i}
             {...icon}
-            springs={springs}
+            spring={springs[i]}
           />
         ))
       }

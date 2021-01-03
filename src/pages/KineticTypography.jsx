@@ -150,38 +150,23 @@ const KineticTypography = () => {
 
   return(
     <div className={styles.container}>
-      {/* <svg viewBox={`-${width / 2}, -${height / 2}, ${width}, ${height}`} style={{border: '1px solid white'}}>
-        <a.text
-          className={styles.text}
-          fill='white'
-          dominantBaseline="middle"
-          textAnchor="middle"
-          style={{
-            transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
-            opacity: anim.opacity
-          }}
-        >
-          { anim.text }
-        </a.text>
-      </svg> */}
-
-        <a.p
-          className={styles.text}
-          style={{
-            transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
-            opacity: anim.opacity
-          }}
-        >
-          { anim.text }
-        </a.p>
-        <a.p
-          className={styles.bottomText}
-          style={{
-            opacity: anim.bottomTextOpacity
-          }}
-        >
-          { anim.bottomText }
-        </a.p>
+      <a.p
+        className={styles.text}
+        style={{
+          transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
+          opacity: anim.opacity
+        }}
+      >
+        { anim.text }
+      </a.p>
+      <a.p
+        className={styles.bottomText}
+        style={{
+          opacity: anim.bottomTextOpacity
+        }}
+      >
+        { anim.bottomText }
+      </a.p>
     </div>
   )
 }

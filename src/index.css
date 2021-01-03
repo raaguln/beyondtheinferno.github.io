@@ -1,13 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
-/* @import 'variables.css'; */
 
 :root {
-  --primary-black:#121212;
+  --primary-black: #121212;
   --primary-white: #fafafa;
-  --hover-violet: '#CA4DAF52';
-  --hover-blue: '#3a86ff52';
-  --hover-black: '#26262652';
-  --hover-orange: '#FF8C5052';
 }
 
 body {

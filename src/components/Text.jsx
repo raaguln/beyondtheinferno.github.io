@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SVGText = ({ x, y, darkMode = false }) => {
+const Text = ({ x, y, darkMode = false }) => {
   return (
     <text
       x={x}
@@ -20,4 +20,4 @@ const SVGText = ({ x, y, darkMode = false }) => {
   )
 }
 
-export default SVGText
+export default Text
