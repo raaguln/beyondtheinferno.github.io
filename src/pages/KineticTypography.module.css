@@ -27,3 +27,27 @@
   text-align: right;
   color: white;
 }
+
+.svg {
+  position: absolute;
+}
+
+.radialAreaLabel {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3vmin;
+  line-height: 1.3;
+  color: black;
+}
+
+.styledLabel {
+  font-size: 7vmin;
+  line-height: 1.3;
+  margin: 0;
+  background: -webkit-linear-gradient(#f89b29, #ff0f7b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
