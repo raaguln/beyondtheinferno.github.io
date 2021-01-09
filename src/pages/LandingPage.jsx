@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTrail, config } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
 import { getClusterData } from '../utils/getData'
-import { SVG, Icon, Toggle } from '../components'
+import { SVG, Icon, Toggle, TLDR } from '../components'
 import {
   Linkedin, LinkedinLight, Github, GithubLight,
   Resume, ResumeLight, Mail, MailLight
@@ -73,10 +73,13 @@ const LandingPage = () => {
 
   return(
     <div className={styles.container}>
-      <Toggle
-        darkMode={darkMode}
-        darkModeToggle={darkModeToggle}
-      />
+      <div className={styles.topRightContainer}>
+        <TLDR darkMode={darkMode} />
+        <Toggle
+          darkMode={darkMode}
+          darkModeToggle={darkModeToggle}
+        />
+      </div>
       <SVG {...svgProps} />
       <div className={styles.links}>
       {

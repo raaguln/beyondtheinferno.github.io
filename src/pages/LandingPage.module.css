@@ -7,6 +7,15 @@
   flex-direction: column;
 }
 
+.topRightContainer {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .links {
   display: flex;
   justify-content: center;

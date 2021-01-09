@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { useSpring, animated as a, config } from 'react-spring'
+import { useHistory } from 'react-router-dom'
 import { interpolate } from 'flubber'
 import { getRadialAreaData } from '../utils/getRadialAreaData'
 import ReactLogo from '../assets/icons/react.png'
@@ -15,6 +16,8 @@ import Languages from '../components/Languages'
 const KineticTypography = () => {
   const width = window.innerWidth,
         height = window.innerHeight
+
+  const history = useHistory()
 
   const [{
     data,
@@ -64,6 +67,7 @@ const KineticTypography = () => {
     pythonLeft: 100,
     pythonOpacity: 0,
     config: { mass: 1, tension: 200, friction: 21, clamp: true },
+    onRest: () => {}
   }))
 
   const languagesPages = [
@@ -124,7 +128,8 @@ const KineticTypography = () => {
           {
             transform: [-1, 0, 1],
             text: "I'm",
-            config: config.default
+            config: config.default,
+            onRest: () => {}
           },
           {
             transform: [-2, 0, 1],
@@ -616,9 +621,15 @@ const KineticTypography = () => {
             immediate: false,
             config: config.molasses
           },
+          {
+            dummyVal: 0,
+            onRest: () => {
+              history.push("/")
+            }
+          }
         ],
       })
-    }, 1000)
+    }, 5000)
   }, [])
 
   return(

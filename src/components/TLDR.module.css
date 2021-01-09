@@ -1,9 +1,10 @@
 .button {
   /* Reset default CSS */
   border: none;
-  margin: 0;
+  /* padding: 2vmin 3vmin; */
+  margin: 0 1.5vmin;
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: 'Poppins';
   cursor: pointer;
   text-align: center;
   -webkit-appearance: none;
@@ -18,9 +19,8 @@
   height: 6vmin;
   min-width: 52px;
   min-height: 40px;
-}
-
-.image {
-  position: absolute;
-  width: 4vmin;
+  background-color: #8338ec72;
+  font-size: calc(10px + 1vmin);
+  font-weight: 400;
+  transition: color 0.1s ease-in;
 }
