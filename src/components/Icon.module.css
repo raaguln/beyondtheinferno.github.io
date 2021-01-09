@@ -11,6 +11,24 @@
   cursor: pointer;
 }
 
+.container:nth-child(2) .icon {
+  margin-top: 2px;
+}
+
+.container:nth-child(1):hover {
+  background-color: #3a86ff72;
+}
+
+.container:nth-child(2):hover {
+  background-color: #8d99ae72;
+}
+
+.container:nth-child(3):hover {
+  background-color: #FF8C5072;
+}
+
+/* 
+// When resume is active
 .container:nth-child(3) .icon {
   margin-top: 2px;
 }
@@ -29,4 +47,4 @@
 
 .container:nth-child(4):hover {
   background-color: #FF8C5072;
-}
+} */

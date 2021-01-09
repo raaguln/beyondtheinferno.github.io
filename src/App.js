@@ -1,6 +1,5 @@
 import React from 'react'
-import LandingPage from './pages/LandingPage'
-import KineticTypography from './pages/KineticTypography'
+import { LandingPage, KineticTypography } from './pages'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { useTransition, animated as a } from 'react-spring'
 import styles from './App.module.css'

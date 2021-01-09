@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
-import data from './radialAreaData'
 import nullData from './nullData'
+import data from './radialAreaData'
 
 const parseTime = d3.timeParse('%I:%M%p')
 
@@ -9,12 +9,12 @@ export const getRadialAreaData = (width, height) => {
         innerRadius = width > height ? (height / 4) : (width / 4),
         outerRadius = width > height ? (height / 2 - margin) : (width / 2 - margin)
 
-  const finalData = data.map(d => ({
+  const initialData = nullData.map(d => ({
     time: parseTime(d.time),
     value: d.value
   }))
 
-  const initialData = nullData.map(d => ({
+  const finalData = data.map(d => ({
     time: parseTime(d.time),
     value: d.value
   }))
@@ -33,11 +33,6 @@ export const getRadialAreaData = (width, height) => {
     ])
     .range([innerRadius, outerRadius])
 
-  const line = d3.lineRadial()
-    .curve(d3.curveLinearClosed)
-    .angle(d => x(d.time))
-    .radius(d => y(d.value))
-
   const area = d3.areaRadial()
     .curve(d3.curveBasis)
     .angle(d => x(d.time))
@@ -45,15 +40,10 @@ export const getRadialAreaData = (width, height) => {
     .innerRadius(y(0))
     .outerRadius(d => y(d.value))
 
+  const paths = [area(initialData), area(finalData)]
+
   return {
-    data: finalData,
-    initialData,
-    x,
-    y,
-    line,
-    area,
     innerRadius,
-    outerRadius,
-    parseTime
+    paths
   }
 }

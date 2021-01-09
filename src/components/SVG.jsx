@@ -29,14 +29,14 @@ const SVG = ({ circles, radius, color, darkMode, startAnimation }) => {
         }}
       >
       {
-        circles.map(({x, y }, i) => (
+        circles.map(({ x, y, r }, i) => (
           <circle
             key={i}
             className={styles.circle}
             cx={x}
             cy={y}
             transform={`translate(${width / 2}, ${height / 2})`}
-            r={startAnimation ? radius(getRandomArbitrary(0, 5)) : 0}
+            r={startAnimation ? r : 0}
             fill={color(getRandomArbitrary(0, 7))}
             style={{
               mixBlendMode: darkMode ? 'multiply' : 'screen'

@@ -24,3 +24,9 @@
   position: absolute;
   width: 4vmin;
 }
+
+@media only screen and (max-width: 500px) {
+  .image {
+    width: 5vmin;
+  }
+}

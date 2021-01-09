@@ -9,10 +9,11 @@ const Languages = ({ logo, alt, text, left, opacity, color }) => {
         position: 'absolute',
         left: left.interpolate(x => `${x}vw`),
         opacity: opacity,
-        backgroundColor: 'black'
       }}
     >
-      <img className={styles.languageLogo} src={ logo } alt={ alt } />
+      <img className={styles.languageLogo} src={ logo } alt={ alt }
+        style={{ width: text === 'Jest' ? '24vmin!important' : '20vmin' }}
+      />
       <p className={styles.languageText} style={{ color }}>{ text }</p>
     </a.div>
   )

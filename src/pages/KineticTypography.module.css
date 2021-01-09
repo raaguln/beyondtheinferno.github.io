@@ -1,3 +1,9 @@
+.parentContainer {
+  width: 100%;
+  height: 100%;
+  background-color: #121212;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -5,7 +11,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #121212;
 }
 
 .text {
@@ -13,7 +19,7 @@
   font-size: 6vmin;
   font-weight: 800;
   text-align: center;
-  color: white;
+  color: #fafafa;
 }
 
 .bottomText {
@@ -25,7 +31,13 @@
   font-size: 3vmin;
   font-weight: 800;
   text-align: right;
-  /* color: white; */
+}
+
+.start {
+  position: absolute;
+  bottom: 10vmin;
+  width: 7vmin;
+  cursor: pointer;
 }
 
 .svg {
@@ -39,12 +51,14 @@
   align-items: center;
   flex-direction: column;
   font-size: 3vmin;
+  font-weight: 800;
   line-height: 1.3;
-  color: black;
+  color: #121212;
 }
 
 .styledLabel {
   font-size: 7vmin;
+  font-weight: 800;
   line-height: 1.3;
   margin: 0;
   background: -webkit-linear-gradient(#f89b29, #ff0f7b);

@@ -13,7 +13,10 @@ export const getClusterData = () => {
 
   let color = scaleOrdinal(
     [0, 1, 2, 3, 4, 5, 6],
-    ["#CA4DAF", "#35A993", "#8820A3", "#CD4F61", "#F7D783", "#FF8C50", "#4D4AED", "#86BEFF"]
+    // ["#CA4DAF", "#35A993", "#8820A3", "#CD4F61", "#F7D783", "#FF8C50", "#4D4AED", "#86BEFF"]
+    ["#e6c229", "#f17105", "#d11149", "#9051F6", "#1a8fe3", "#40916c"]
+    // ["#ffbe0b", "#fb5607", "#ff006e","#8338ec", "#3a86ff"]
+    // ["#ff595e", "#ffca3a", "#8ac926", "#1982c4", "#6a4c93"]
   )
 
   return {

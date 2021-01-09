@@ -18,11 +18,11 @@ const LandingPage = () => {
   const [data] = useState(() => getClusterData())
 
   const icons = [
-    {
-      link: 'https://drive.google.com/file/d/1RMoZEVQuJljZB_KlZZOJ3uvVum8NMav4/view',
-      icon: darkMode ? ResumeLight : Resume,
-      alt: 'Resume'
-    },
+    // {
+    //   link: 'https://drive.google.com/file/d/1RMoZEVQuJljZB_KlZZOJ3uvVum8NMav4/view',
+    //   icon: darkMode ? ResumeLight : Resume,
+    //   alt: 'Resume'
+    // },
     {
       link: 'https://www.linkedin.com/in/raagul-n/',
       icon: darkMode ? LinkedinLight : Linkedin,
