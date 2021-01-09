@@ -1,0 +1,22 @@
+.languagesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.languageText {
+  max-width: 80vw;
+  font-size: 8vmin;
+  font-weight: 800;
+  text-align: center;
+  color: white;
+  margin: 3vmin;
+}
+
+.languageLogo {
+  width: 20vmin;
+  margin: 3vmin;
+}
