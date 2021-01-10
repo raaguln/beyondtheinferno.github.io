@@ -1,0 +1,6 @@
+export { default as ReactLogo } from './react.png'
+export { default as D3Logo } from './d3.png'
+export { default as ReduxLogo } from './redux.png'
+export { default as JestLogo } from './jest.png'
+export { default as WebpackLogo } from './webpack.png'
+export { default as PythonLogo } from './python.png'

@@ -24,7 +24,7 @@ export const getRadialAreaData = (width, height) => {
       parseTime('12:00am'),
       parseTime('11:59pm')
     ])
-    .range([0, 2 * Math.PI])
+    .range([0, 2 * Math.PI + 0.15])
 
   const y = d3.scaleLinear()
     .domain([
@@ -43,7 +43,7 @@ export const getRadialAreaData = (width, height) => {
   const paths = [area(initialData), area(finalData)]
 
   return {
-    innerRadius,
-    paths
+    paths,
+    innerRadius
   }
 }

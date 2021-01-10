@@ -1,0 +1,25 @@
+.svg {
+  position: absolute;
+}
+
+.radialAreaLabel {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2.5vmin;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #555555;
+}
+
+.styledLabel {
+  font-size: 10vmin;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: -5px 0 0 0;
+  background: -webkit-linear-gradient(#60efff, #0061ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

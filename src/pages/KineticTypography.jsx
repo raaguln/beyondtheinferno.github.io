@@ -2,20 +2,19 @@ import React, { useState, useEffect } from 'react'
 import { useSpring, animated as a } from 'react-spring'
 import { useHistory } from 'react-router-dom'
 import { interpolate } from 'flubber'
-import { Languages } from '../components'
+import { Languages, TypographySVG } from '../components'
 import { getRadialAreaData } from '../utils/getRadialAreaData'
 import { initialTypographyStates, typographyState } from '../utils/typographyState'
 import styles from './KineticTypography.module.css'
+import { Play } from '../assets/icons'
 import {
-  Play,
   ReactLogo,
   D3Logo,
   ReduxLogo,
   JestLogo,
   WebpackLogo,
   PythonLogo
-} from '../assets/icons'
-
+} from '../assets/logos'
 
 const KineticTypography = () => {
   const width = window.innerWidth,
@@ -28,12 +27,27 @@ const KineticTypography = () => {
     innerRadius
   }] = useState(() => getRadialAreaData(width, height))
 
-  const interpolator = interpolate(paths[0], paths[1])
-
   const [startAnimation, setStartAnimation] = useState(false)
   const [anim, setAnim] = useSpring(() => ({
     ...initialTypographyStates
   }))
+
+  useEffect(() => {
+    if(startAnimation)
+      setAnim({
+        to: [
+          ...typographyState,
+          {
+            dummyVal: 15,
+            onRest: () => {
+              history.push("/")
+            }
+          }
+        ],
+      })
+  }, [startAnimation])
+
+  const interpolator = interpolate(paths[0], paths[1])
 
   const languagesPages = [
     {
@@ -86,131 +100,54 @@ const KineticTypography = () => {
     },
   ]
 
-  useEffect(() => {
-    if(startAnimation)
-      setAnim({
-        to: [
-          ...typographyState,
-          {
-            dummyVal: 15,
-            onRest: () => {
-              history.push("/")
-            }
-          }
-        ],
-      })
-  }, [startAnimation])
-
   return(
     <div className={styles.parentContainer}>
-    <a.div className={styles.container}
-      style={{
-        position: 'absolute',
-        left: anim.baseLeft.interpolate(x => `${x}vw`),
-        opacity: anim.baseOpacity
-      }}
-    >
-      <svg className={styles.svg} width='100%' height='100%' viewBox={`0, 0, ${width}, ${height}`} preserveAspectRatio='xMidYMid meet'>
-        <defs>
-          <radialGradient id='coolBlue'>
-            <stop offset='50%' stopColor='#0061ff' />
-            <stop offset='95%' stopColor='#60efff' />
-          </radialGradient>
-        </defs>
-        <a.circle
-          cx={width / 2}
-          cy={height / 2}
-          r={anim.r}
-          fill='#fafafa'
+      <a.div className={styles.container}
+        style={{
+          position: 'absolute',
+          left: anim.baseLeft.interpolate(x => `${x}vw`),
+          opacity: anim.baseOpacity
+        }}
+      >
+        <TypographySVG
+          width={width}
+          height={height}
+          anim={anim}
+          innerRadius={innerRadius}
+          interpolator={interpolator}
         />
-        <a.circle
-          cx={width / 2}
-          cy={height / 2}
-          r={anim.r2}
-          fill='#fafafa'
-          stroke='#0061ff'
-          strokeWidth='1'
-        />
-        <a.path
-          transform={`translate(${width / 2}, ${height / 2}) rotate(10)`}
-          fill='url(#coolBlue)'
-          d={anim.chartPath.interpolate(interpolator)}
+        <a.p
+          className={styles.text}
           style={{
-            opacity: anim.chartOpacity
-          }}
-        />
-        <path id='innerCircle' d={paths[0]} transform={`translate(${width / 2}, ${height / 2}) rotate(10)`} style={{ opacity: 0 }}/>
-        <a.g style={{ opacity: anim.radialAreaX }}>
-          <text
-            transform='translate(-30, 30)'
-            fill='#121212'
-            fontSize='2.3vmin'
-            fontWeight='800'
-          >
-            <textPath href='#innerCircle' startOffset='1%'>
-              12 AM
-            </textPath>
-          </text>
-          <text
-            transform='translate(30, 30)'
-            fill='#121212'
-            fontSize='2.3vmin'
-            fontWeight='800'
-          >
-            <textPath href='#innerCircle' startOffset='46.5%'>
-              11:59 PM
-            </textPath>
-          </text>
-        </a.g>
-        <a.foreignObject
-          x={width / 2 - ((innerRadius * 2 - 30) / 2)}
-          y={height / 2 - ((innerRadius * 2 - 30) / 2)}
-          width={ innerRadius * 2 - 30 }
-          height={ innerRadius * 2 - 30 }
-          style={{
-            textAlign: "center",
-            opacity: anim.radialAreaLabel
+            transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
+            opacity: anim.opacity
           }}
         >
-        <div className={styles.radialAreaLabel} xmlns="http://www.w3.org/1999/xhtml">
-          PROBABILITY OF YOU FINDING ME IN MY BED IN
-          <p className={styles.styledLabel}>2020</p>
-        </div>
-        </a.foreignObject>
-      </svg>
-      <a.p
-        className={styles.text}
-        style={{
-          transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
-          opacity: anim.opacity
-        }}
-      >
-        { anim.text }
-      </a.p>
-      <a.img
-        className={styles.start}
-        src={Play}
-        alt='Start tldr;'
-        onClick={() => setStartAnimation(true)}
-        style={{
-          opacity: anim.playOpacity
-        }}
-      />
-      <a.p
-        className={styles.bottomText}
-        style={{
-          opacity: anim.bottomTextOpacity,
-          color: anim.bottomTextColor
-        }}
-      >
-        { anim.bottomText }
-      </a.p>
-    </a.div>
-    {
-      languagesPages.map(language => (
-        <Languages {...language} />
-      ))
-    }
+          { anim.text }
+        </a.p>
+        <a.img
+          className={styles.start}
+          src={Play}
+          alt='Start tldr;'
+          title='Click to know more about me'
+          onClick={() => setStartAnimation(true)}
+          style={{ opacity: anim.playOpacity }}
+        />
+        <a.p
+          className={styles.bottomText}
+          style={{
+            opacity: anim.bottomTextOpacity,
+            color: anim.bottomTextColor
+          }}
+        >
+          { anim.bottomText }
+        </a.p>
+      </a.div>
+      {
+        languagesPages.map((language, i) => (
+          <Languages key={i} {...language} />
+        ))
+      }
     </div>
   )
 }

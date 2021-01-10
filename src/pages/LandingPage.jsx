@@ -5,7 +5,8 @@ import { getClusterData } from '../utils/getData'
 import { SVG, Icon, Toggle, TLDR } from '../components'
 import {
   Linkedin, LinkedinLight, Github, GithubLight,
-  Resume, ResumeLight, Mail, MailLight
+  Mail, MailLight
+  // Resume, ResumeLight,
 } from '../assets/icons'
 import styles from './LandingPage.module.css'
 

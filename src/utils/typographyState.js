@@ -70,14 +70,14 @@ export const typographyState = [
   {
     transform: [-8, 0, 1],
     text: "I'm Raagul Nagendran",
-    config: fast
+    config: medium
   },
   {
     transform: [-6, 0, 1],
     text: "I'm Raagul N",
     config: slow
   },
-  // Front End Dev
+  // FRONT END DEVELOPER
   {
     transform: [0, 0, 1],
     text: "I",
@@ -86,6 +86,7 @@ export const typographyState = [
   {
     transform: [-1, 0, 1],
     text: "I am",
+    config: superFast
   },
   {
     transform: [-4, 0, 1],
@@ -154,10 +155,8 @@ export const typographyState = [
     radialAreaX: 1,
     config: superSlow
   },
-
-
   {
-    bottomText: "I blame my cozy WFH setup :)",
+    bottomText: "WFH + music is :)",
     bottomTextColor: '#121212',
     immediate: true
   },
@@ -177,9 +176,6 @@ export const typographyState = [
     bottomTextOpacity: 0,
     config: medium,
   },
-
-
-
   {
     r: 0,
     chartOpacity: 0,
@@ -192,6 +188,7 @@ export const typographyState = [
   {
     transform: [0, 0, 1],
     text: "Backend Developer",
+    config: slow,
     immediate: true
   },
   {
@@ -244,6 +241,7 @@ export const typographyState = [
     bottomTextTransform: [0, 0],
     immediate: true
   },
+  // LANGUAGES
   {
     transform: [0, 0, 1],
     opacity: 1,
@@ -344,8 +342,6 @@ export const typographyState = [
     bottomTextOpacity: 0,
     config: medium,
   },
-
-
   // I COULD HAVE TOLD YOU THIS
   {
     transform: [-6, 0, 1],
@@ -355,7 +351,7 @@ export const typographyState = [
   },
   {
     opacity: 1,
-    config: fast,
+    config: superFast,
     immediate: false
   },
   {
@@ -409,7 +405,7 @@ export const typographyState = [
   },
   {
     opacity: 1,
-    config: fast,
+    config: superFast,
     immediate: false
   },
   {
@@ -448,8 +444,6 @@ export const typographyState = [
     bottomTextOpacity: 0,
     config: medium,
   },
-
-
   // FINALE
   {
     transform: [-5, 0, 1],
@@ -459,7 +453,7 @@ export const typographyState = [
   },
   {
     opacity: 1,
-    config: fast,
+    config: superFast,
     immediate: false
   },
   {
@@ -545,9 +539,9 @@ export const typographyState = [
   {
     bottomTextOpacity: 1,
     immediate: false,
-    config: superSlow
+    config: slow
   },
   {
-    config: medium
+    config: fast
   }
 ]

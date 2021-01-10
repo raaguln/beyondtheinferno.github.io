@@ -15,7 +15,7 @@ const Text = ({ x, y, darkMode = false }) => {
         transition: 'fill 0.2s ease-in, stroke 0.2s ease-in'
       }}
     >
-      RAAGUL N.
+      RAAGUL  N.
     </text>
   )
 }
