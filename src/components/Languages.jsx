@@ -6,7 +6,7 @@ const Languages = ({ logo, alt, text, left, opacity, color }) => {
   return(
     <a.div className={styles.languagesContainer}
       style={{
-        position: 'absolute',
+        position: 'fixed',
         left: left.interpolate(x => `${x}vw`),
         opacity: opacity,
       }}
