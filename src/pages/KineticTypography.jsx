@@ -100,6 +100,11 @@ const KineticTypography = () => {
     },
   ]
 
+  const handleKeyPress = e => {
+    if(e.key === 'Enter')
+      setStartAnimation(true)
+  }
+
   return(
     <div className={styles.parentContainer}>
       <a.div className={styles.container}
@@ -120,7 +125,8 @@ const KineticTypography = () => {
           className={styles.text}
           style={{
             transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
-            opacity: anim.opacity
+            opacity: anim.opacity,
+            userSelect: anim.opacity.interpolate(x => x === 0 ? 'none' : 'text')
           }}
         >
           { anim.text }
@@ -130,13 +136,19 @@ const KineticTypography = () => {
           src={Play}
           alt='Start tldr;'
           title='Click to know more about me'
+          tabindex='1'
+          onKeyPress={handleKeyPress}
           onClick={() => setStartAnimation(true)}
-          style={{ opacity: anim.playOpacity }}
+          style={{
+            opacity: anim.playOpacity,
+            userSelect: anim.playOpacity.interpolate(x => x === 0 ? 'none' : 'text')
+          }}
         />
         <a.p
           className={styles.bottomText}
           style={{
             opacity: anim.bottomTextOpacity,
+            userSelect: anim.bottomTextOpacity.interpolate(x => x === 0 ? 'none' : 'text'),
             color: anim.bottomTextColor
           }}
         >

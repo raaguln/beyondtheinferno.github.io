@@ -24,21 +24,29 @@ const TypographySVG = ({ width, height, anim, innerRadius, interpolator }) => {
   const labels = [
     {
       x: w,
-      y: h - innerRadius + 20,
+      y: h - innerRadius + (
+        width > 600 ? 20 : 10
+      ),
       text: '00'
     },
     {
-      x: w + innerRadius - 20,
+      x: w + innerRadius - (
+        width > 600 ? 20 : 10
+      ),
       y: h,
       text: '06'
     },
     {
       x: w,
-      y: h + innerRadius - 20,
+      y: h + innerRadius - (
+        width > 600 ? 20 : 10
+      ),
       text: '12'
     },
     {
-      x: w - innerRadius + 20,
+      x: w - innerRadius + (
+        width > 600 ? 20 : 10
+      ),
       y: h,
       text: '18'
     },
@@ -65,7 +73,10 @@ const TypographySVG = ({ width, height, anim, innerRadius, interpolator }) => {
         />
 
         {/* RADIAL AREA - X LABELS */}
-        <a.g style={{ opacity: anim.radialAreaX }}>
+        <a.g style={{
+          opacity: anim.radialAreaX,
+          userSelect: anim.radialAreaX.interpolate(x => x === 0 ? 'none' : 'text')
+        }}>
         {
           labels.map((label, i) => (
             <Label
@@ -88,17 +99,23 @@ const TypographySVG = ({ width, height, anim, innerRadius, interpolator }) => {
 
         {/* RADIAL AREA - TITLE */}
         <a.foreignObject
-          x={width / 2 - ((innerRadius * 2 - 150) / 2)}
-          y={height / 2 - ((innerRadius * 2 - 150) / 2)}
-          width={ innerRadius * 2 - 150 }
-          height={ innerRadius * 2 - 150 }
+          x={width / 2 - ((innerRadius * 2 - 50) / 2)}
+          y={height / 2 - ((innerRadius * 2 - 50) / 2)}
+          width={ innerRadius * 2 - 50 }
+          height={ innerRadius * 2 - 50 }
           style={{
             textAlign: "center",
-            opacity: anim.radialAreaLabel
+            opacity: anim.radialAreaLabel,
+            userSelect: anim.radialAreaLabel.interpolate(x => x === 0 ? 'none' : 'text')
           }}
         >
           <div className={styles.radialAreaLabel} xmlns="http://www.w3.org/1999/xhtml">
-            My music listening pattern in
+            <p
+              className={styles.text}
+              style={{ maxWidth: innerRadius * 2 - 130 }}
+            >
+                My music listening pattern in
+            </p>
             <p className={styles.styledLabel}>2020</p>
           </div>
         </a.foreignObject>
