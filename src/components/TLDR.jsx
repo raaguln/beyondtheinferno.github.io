@@ -13,7 +13,7 @@ const TLDR = ({ darkMode }) => {
         color: darkMode ? '#fafafa' : '#121212'
       }}
     >
-      tldr;
+      tl;dr
     </button>
   )
 }
