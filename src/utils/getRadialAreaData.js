@@ -1,8 +1,10 @@
-import * as d3 from 'd3'
+import { areaRadial, curveBasis } from 'd3-shape'
+import { scaleLinear, scaleTime } from 'd3-scale'
+import { timeParse } from 'd3-time-format'
 import nullData from './nullData'
 import data from './radialAreaData'
 
-const parseTime = d3.timeParse('%I:%M%p')
+const parseTime = timeParse('%I:%M%p')
 
 export const getRadialAreaData = (width, height) => {
   const margin = 50,
@@ -19,22 +21,22 @@ export const getRadialAreaData = (width, height) => {
     value: d.value
   }))
 
-  const x = d3.scaleTime()
+  const x = scaleTime()
     .domain([
       parseTime('12:00am'),
       parseTime('11:59pm')
     ])
     .range([0, 2 * Math.PI + 0.15])
 
-  const y = d3.scaleLinear()
+  const y = scaleLinear()
     .domain([
       0,
-      d3.max(data, d => d.value)
+      Math.max.apply(Math, data.map(d => d.value))
     ])
     .range([innerRadius, outerRadius])
 
-  const area = d3.areaRadial()
-    .curve(d3.curveBasis)
+  const area = areaRadial()
+    .curve(curveBasis)
     .angle(d => x(d.time))
     .radius(d => y(d.value))
     .innerRadius(y(0))
