@@ -1,4 +1,4 @@
-import { scaleOrdinal, scaleLinear } from 'd3'
+import { scaleOrdinal, scaleLinear } from 'd3-scale'
 import { data } from './data'
 
 export const getClusterData = () => {
