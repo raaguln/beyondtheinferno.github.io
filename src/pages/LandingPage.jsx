@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { useTrail, config } from 'react-spring'
-import useDarkMode from 'use-dark-mode'
-import { getClusterData } from '../utils/getData'
-import { SVG, Icon, Toggle, TLDR } from '../components'
+import React, { useState, useEffect } from "react"
+import { useTrail, config } from "react-spring"
+import useDarkMode from "use-dark-mode"
+import { getClusterData } from "../utils/getData"
+import { SVG, Icon, Toggle, TLDR } from "../components"
 import {
-  Linkedin, LinkedinLight, Github, GithubLight,
-  Mail, MailLight
+  Linkedin,
+  LinkedinLight,
+  Github,
+  GithubLight,
+  Mail,
+  MailLight,
   // Resume, ResumeLight,
-} from '../assets/icons'
-import styles from './LandingPage.module.css'
+} from "../assets/icons"
+import styles from "./LandingPage.module.css"
 
 const LandingPage = () => {
-  const {
-    value: darkMode,
-    toggle: darkModeToggle
-  } = useDarkMode()
+  const { value: darkMode, toggle: darkModeToggle } = useDarkMode()
 
   const [data] = useState(() => getClusterData())
 
@@ -25,19 +26,19 @@ const LandingPage = () => {
     //   alt: 'Resume'
     // },
     {
-      link: 'https://www.linkedin.com/in/raagul-n/',
+      link: "https://www.linkedin.com/in/raagul-n/",
       icon: darkMode ? LinkedinLight : Linkedin,
-      alt: 'LinkedIn'
+      alt: "LinkedIn",
     },
     {
-      link: 'https://github.com/beyondtheinferno',
+      link: "https://github.com/beyondtheinferno",
       icon: darkMode ? GithubLight : Github,
-      alt: 'Github'
+      alt: "Github",
     },
     {
-      link: 'mailto:raagul72@gmail.com',
+      link: "mailto:raagul72@gmail.com",
       icon: darkMode ? MailLight : Mail,
-      alt: 'Email'
+      alt: "Email",
     },
   ]
 
@@ -46,7 +47,7 @@ const LandingPage = () => {
   const [springs, setSprings] = useTrail(icons.length, () => ({
     transform: -20,
     opacity: 0,
-    config: config.molasses
+    config: config.molasses,
   }))
 
   useEffect(() => {
@@ -56,7 +57,7 @@ const LandingPage = () => {
   }, [])
 
   useEffect(() => {
-    if(startAnimation) {
+    if (startAnimation) {
       setTimeout(() => {
         setSprings({
           transform: 0,
@@ -69,29 +70,20 @@ const LandingPage = () => {
   const svgProps = {
     ...data,
     darkMode,
-    startAnimation
+    startAnimation,
   }
 
-  return(
+  return (
     <div className={styles.container}>
       <div className={styles.topRightContainer}>
         <TLDR darkMode={darkMode} />
-        <Toggle
-          darkMode={darkMode}
-          darkModeToggle={darkModeToggle}
-        />
+        <Toggle darkMode={darkMode} darkModeToggle={darkModeToggle} />
       </div>
       <SVG {...svgProps} />
       <div className={styles.links}>
-      {
-        icons.map((icon, i) => (
-          <Icon
-            key={i}
-            {...icon}
-            spring={springs[i]}
-          />
-        ))
-      }
+        {icons.map((icon, i) => (
+          <Icon key={i} {...icon} spring={springs[i]} />
+        ))}
       </div>
     </div>
   )
