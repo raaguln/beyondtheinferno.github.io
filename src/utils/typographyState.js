@@ -389,7 +389,7 @@ export const typographyState = [
     config: superSlow
   },
   {
-    transform: [0, -20, 1],
+    transform: [6, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
@@ -438,7 +438,7 @@ export const typographyState = [
     config: superSlow
   },
   {
-    transform: [0, -20, 1],
+    transform: [4, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,

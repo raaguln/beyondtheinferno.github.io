@@ -136,7 +136,7 @@ const KineticTypography = () => {
           src={Play}
           alt='Start tldr;'
           title='Click to know more about me'
-          tabindex='1'
+          tabIndex='1'
           onKeyPress={handleKeyPress}
           onClick={() => setStartAnimation(true)}
           style={{
