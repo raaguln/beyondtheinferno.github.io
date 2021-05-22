@@ -1,7 +1,7 @@
 import { config } from 'react-spring'
 
 const width = window.innerWidth,
-      height = window.innerHeight
+  height = window.innerHeight
 
 const superFast = { mass: 1, tension: 200, friction: 21, clamp: true },
   fast = config.default,
@@ -16,7 +16,7 @@ export const initialTypographyStates = {
   transform: [0, 0, 1.8],
   text: 'Hey!',
   opacity: 0,
-  bottomText: "Doubts? This whole website is proof :P",
+  bottomText: 'Doubts? This whole website is proof :P',
   bottomTextTransform: [0, 0],
   bottomTextOpacity: 0,
   bottomTextColor: '#fafafa',
@@ -40,90 +40,90 @@ export const initialTypographyStates = {
   pythonLeft: 100,
   pythonOpacity: 0,
   config: superFast,
-  onRest: () => {}
+  onRest: () => {},
 }
 
 export const typographyState = [
   {
     playOpacity: 0,
-    config: fast
+    config: fast,
   },
   {
-    opacity: 1
+    opacity: 1,
   },
   {
     transform: [-1, 0, 1],
     text: "I'm",
     config: fast,
-    onRest: () => {}
+    onRest: () => {},
   },
   {
     transform: [-2, 0, 1],
     text: "I'm Raagul",
-    config: superFast
+    config: superFast,
   },
   {
     transform: [-4, 0, 1],
     text: "I'm Raagul N",
-    config: slow
+    config: slow,
   },
   {
     transform: [-8, 0, 1],
     text: "I'm Raagul Nagendran",
-    config: medium
+    config: medium,
   },
   {
     transform: [-6, 0, 1],
     text: "I'm Raagul N",
-    config: slow
+    config: slow,
   },
   // FRONT END DEVELOPER
   {
     transform: [0, 0, 1],
-    text: "I",
-    config: superFast
+    text: 'I',
+    config: superFast,
   },
   {
     transform: [-1, 0, 1],
-    text: "I am",
-    config: superFast
+    text: 'I am',
+    config: superFast,
   },
   {
     transform: [-4, 0, 1],
-    text: "I am a",
-    config: medium
+    text: 'I am a',
+    config: medium,
   },
   {
     transform: [0, 0, 1],
-    text: "Front End Developer",
-    config: slow
+    text: 'Front End Developer',
+    config: slow,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     transform: [0, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium
+    config: medium,
   },
   // DATA VISUALISATION
   {
     transform: [0, 0, 1],
-    text: "Data Visualisation Engineer",
-    bottomText: "You still doubt me?",
-    immediate: true
+    text: 'Data Visualisation Engineer',
+    bottomText: 'You still doubt me?',
+    immediate: true,
   },
   {
     opacity: 1,
     config: slow,
-    immediate: false
+    immediate: false,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     transform: [0, -20, 1],
@@ -134,10 +134,8 @@ export const typographyState = [
   },
   // RADIAL CHART
   {
-    r: Math.ceil(Math.sqrt(
-      Math.pow((width / 2), 2) + Math.pow((height / 2), 2),
-    )),
-    config: slow
+    r: Math.ceil(Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height / 2, 2))),
+    config: slow,
   },
   {
     chartOpacity: 1,
@@ -145,29 +143,29 @@ export const typographyState = [
   },
   {
     radialAreaLabel: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     chartPath: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     radialAreaX: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
-    bottomText: "WFH + music is :)",
+    bottomText: 'WFH + music is :)',
     bottomTextColor: '#121212',
-    immediate: true
+    immediate: true,
   },
   {
     bottomTextOpacity: 1,
     config: superSlow,
-    immediate: false
+    immediate: false,
   },
   {
     dummyVal: 20,
-    config: superSlow
+    config: superSlow,
   },
   {
     transform: [0, -20, 1],
@@ -182,52 +180,52 @@ export const typographyState = [
     radialAreaLabel: 0,
     chartPath: 0,
     radialAreaX: 0,
-    config: slow
+    config: slow,
   },
   // BACKEND DEVELOPER
   {
     transform: [0, 0, 1],
-    text: "Backend Developer",
+    text: 'Backend Developer',
     config: slow,
-    immediate: true
+    immediate: true,
   },
   {
     opacity: 1,
     config: slow,
-    immediate: false
+    immediate: false,
   },
   {
     transform: [-4, 0, 1],
-    text: "Backend Developer?",
+    text: 'Backend Developer?',
   },
   {
     transform: [0, 0, 1],
-    text: "Backend Developer",
+    text: 'Backend Developer',
   },
   {
     transform: [-1, 0, 1],
-    text: "Backend Developer.",
-    config: superFast
+    text: 'Backend Developer.',
+    config: superFast,
   },
   {
     transform: [-2, 0, 1],
-    text: "Backend Developer..",
-    config: superFast
+    text: 'Backend Developer..',
+    config: superFast,
   },
   {
     transform: [-3, 0, 1],
-    text: "Backend Developer...",
+    text: 'Backend Developer...',
     config: slow,
   },
   {
-    bottomText: "In progress",
+    bottomText: 'In progress',
     bottomTextColor: '#fafafa',
-    immediate: true
+    immediate: true,
   },
   {
     bottomTextOpacity: 1,
     config: superSlow,
-    immediate: false
+    immediate: false,
   },
   {
     transform: [0, -20, 1],
@@ -239,69 +237,69 @@ export const typographyState = [
   {
     transform: [-1, 0, 1],
     bottomTextTransform: [0, 0],
-    immediate: true
+    immediate: true,
   },
   // LANGUAGES
   {
     transform: [0, 0, 1],
     opacity: 1,
-    text: "I",
+    text: 'I',
     config: superFast,
-    immediate: false
+    immediate: false,
   },
   {
     transform: [-2, 0, 1],
-    text: "I speak",
-    config: slow
+    text: 'I speak',
+    config: slow,
   },
   {
     baseLeft: -50,
     baseOpacity: 0,
     reactLeft: 0,
     reactOpacity: 1,
-    config: fast
+    config: fast,
   },
   {
     reactLeft: -50,
     reactOpacity: 0,
     d3Left: 0,
     d3Opacity: 1,
-    config: fast
+    config: fast,
   },
   {
     d3Left: -50,
     d3Opacity: 0,
     reduxLeft: 0,
     reduxOpacity: 1,
-    config: fast
+    config: fast,
   },
   {
     reduxLeft: -50,
     reduxOpacity: 0,
     webpackLeft: 0,
     webpackOpacity: 1,
-    config: fast
+    config: fast,
   },
   {
     webpackLeft: -50,
     webpackOpacity: 0,
     jestLeft: 0,
     jestOpacity: 1,
-    config: fast
+    config: fast,
   },
   {
     jestLeft: -50,
     jestOpacity: 0,
     pythonLeft: 0,
     pythonOpacity: 1,
-    config: fast
+    config: fast,
   },
   {
     baseLeft: 100,
     baseOpacity: 0,
     transform: [-2, 0, 1],
-    text: "And lots more",
-    immediate: true
+    text: 'And lots more',
+    immediate: true,
   },
   {
     pythonLeft: -50,
@@ -309,31 +307,31 @@ export const typographyState = [
     baseLeft: 0,
     baseOpacity: 1,
     config: fast,
-    immediate: false
+    immediate: false,
   },
   {
     transform: [-1, 0, 1],
-    text: "And lots more.",
-    config: superFast
+    text: 'And lots more.',
+    config: superFast,
   },
   {
     transform: [-2, 0, 1],
-    text: "And lots more..",
-    config: superFast
+    text: 'And lots more..',
+    config: superFast,
   },
   {
     transform: [-3, 0, 1],
-    text: "And lots more...",
+    text: 'And lots more...',
     config: slow,
   },
   {
-    bottomText: "Flutter, Django are loading...",
-    immediate: true
+    bottomText: 'Flutter, Django are loading...',
+    immediate: true,
   },
   {
     bottomTextOpacity: 1,
     config: superSlow,
-    immediate: false
+    immediate: false,
   },
   {
     transform: [0, -20, 1],
@@ -345,48 +343,48 @@ export const typographyState = [
   // I COULD HAVE TOLD YOU THIS
   {
     transform: [-6, 0, 1],
-    text: "I",
-    bottomText: "through static texts and images...",
-    immediate: true
+    text: 'I',
+    bottomText: 'through static texts and images...',
+    immediate: true,
   },
   {
     opacity: 1,
     config: superFast,
-    immediate: false
+    immediate: false,
   },
   {
-    text: "I could",
+    text: 'I could',
     transform: [-4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "I could have",
+    text: 'I could have',
     transform: [-2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "I could have told",
+    text: 'I could have told',
     transform: [0, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "I could have told you",
+    text: 'I could have told you',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "I could have told you all",
+    text: 'I could have told you all',
     transform: [4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "I could have told you all this",
+    text: 'I could have told you all this',
     transform: [6, 0, 1],
-    config: slow
+    config: slow,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     transform: [6, -20, 1],
@@ -399,43 +397,43 @@ export const typographyState = [
   // BUT WHAT'S TEH FUN IN THAT
   {
     transform: [-6, 0, 1],
-    text: "But",
-    bottomText: "Plus, I like challenges :)",
-    immediate: true
+    text: 'But',
+    bottomText: 'Plus, I like challenges :)',
+    immediate: true,
   },
   {
     opacity: 1,
     config: superFast,
-    immediate: false
+    immediate: false,
   },
   {
     text: "But what's",
     transform: [-4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
     text: "But what's the",
     transform: [-2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
     text: "But what's the fun",
     transform: [0, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
     text: "But what's the fun in",
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
     text: "But what's the fun in that?",
     transform: [4, 0, 1],
-    config: slow
+    config: slow,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     transform: [4, -20, 1],
@@ -447,53 +445,53 @@ export const typographyState = [
   // FINALE
   {
     transform: [-5, 0, 1],
-    text: "So",
+    text: 'So',
     bottomText: "Sorry, I'm taken right now :)",
-    immediate: true
+    immediate: true,
   },
   {
     opacity: 1,
     config: superFast,
-    immediate: false
+    immediate: false,
   },
   {
-    text: "So,",
+    text: 'So,',
     transform: [-4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you",
+    text: 'So, you',
     transform: [-2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want",
+    text: 'So, you want',
     transform: [0, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to",
+    text: 'So, you want to',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to hire",
+    text: 'So, you want to hire',
     transform: [4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to hire me",
+    text: 'So, you want to hire me',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to hire me?",
+    text: 'So, you want to hire me?',
     transform: [0, 0, 1],
-    config: slow
+    config: slow,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow
+    config: superSlow,
   },
   {
     bottomTextTransform: [0, -10],
@@ -501,47 +499,47 @@ export const typographyState = [
     config: medium,
   },
   {
-    text: "So, you want to hire me",
+    text: 'So, you want to hire me',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to hire",
+    text: 'So, you want to hire',
     transform: [4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to",
+    text: 'So, you want to',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to contact",
+    text: 'So, you want to contact',
     transform: [4, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to contact me",
+    text: 'So, you want to contact me',
     transform: [2, 0, 1],
-    config: superFast
+    config: superFast,
   },
   {
-    text: "So, you want to contact me?",
+    text: 'So, you want to contact me?',
     transform: [0, 0, 1],
-    config: slow
+    config: slow,
   },
   {
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    bottomText: "Deets in homepage, redirecting...",
-    immediate: true
+    bottomText: 'Deets in homepage, redirecting...',
+    immediate: true,
   },
   {
     bottomTextOpacity: 1,
     immediate: false,
-    config: slow
+    config: slow,
   },
   {
-    config: fast
-  }
+    config: fast,
+  },
 ]

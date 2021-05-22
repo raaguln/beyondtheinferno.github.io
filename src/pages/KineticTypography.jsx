@@ -4,7 +4,10 @@ import { useHistory } from 'react-router-dom'
 import { interpolate } from 'flubber'
 import { Languages, TypographySVG } from '../components'
 import { getRadialAreaData } from '../utils/getRadialAreaData'
-import { initialTypographyStates, typographyState } from '../utils/typographyState'
+import {
+  initialTypographyStates,
+  typographyState,
+} from '../utils/typographyState'
 import styles from './KineticTypography.module.css'
 import { Play } from '../assets/icons'
 import {
@@ -13,36 +16,35 @@ import {
   ReduxLogo,
   JestLogo,
   WebpackLogo,
-  PythonLogo
+  PythonLogo,
 } from '../assets/logos'
 
 const KineticTypography = () => {
   const width = window.innerWidth,
-        height = window.innerHeight
+    height = window.innerHeight
 
   const history = useHistory()
 
-  const [{
-    paths,
-    innerRadius
-  }] = useState(() => getRadialAreaData(width, height))
+  const [{ paths, innerRadius }] = useState(() =>
+    getRadialAreaData(width, height)
+  )
 
   const [startAnimation, setStartAnimation] = useState(false)
   const [anim, setAnim] = useSpring(() => ({
-    ...initialTypographyStates
+    ...initialTypographyStates,
   }))
 
   useEffect(() => {
-    if(startAnimation)
+    if (startAnimation)
       setAnim({
         to: [
           ...typographyState,
           {
             dummyVal: 15,
             onRest: () => {
-              history.push("/")
-            }
-          }
+              history.push('/')
+            },
+          },
         ],
       })
   }, [startAnimation])
@@ -56,7 +58,7 @@ const KineticTypography = () => {
       text: 'React',
       left: anim.reactLeft,
       opacity: anim.reactOpacity,
-      color: '#61DAFB'
+      color: '#61DAFB',
     },
     {
       logo: D3Logo,
@@ -64,7 +66,7 @@ const KineticTypography = () => {
       text: 'D3.js',
       left: anim.d3Left,
       opacity: anim.d3Opacity,
-      color: 'orange'
+      color: 'orange',
     },
     {
       logo: ReduxLogo,
@@ -72,7 +74,7 @@ const KineticTypography = () => {
       text: 'Redux',
       left: anim.reduxLeft,
       opacity: anim.reduxOpacity,
-      color: '#8044C3'
+      color: '#8044C3',
     },
     {
       logo: WebpackLogo,
@@ -80,7 +82,7 @@ const KineticTypography = () => {
       text: 'Webpack',
       left: anim.webpackLeft,
       opacity: anim.webpackOpacity,
-      color: '#8ED5FA'
+      color: '#8ED5FA',
     },
     {
       logo: JestLogo,
@@ -88,7 +90,7 @@ const KineticTypography = () => {
       text: 'Jest',
       left: anim.jestLeft,
       opacity: anim.jestOpacity,
-      color: '#C63D16'
+      color: '#C63D16',
     },
     {
       logo: PythonLogo,
@@ -96,24 +98,23 @@ const KineticTypography = () => {
       text: 'Python',
       left: anim.pythonLeft,
       opacity: anim.pythonOpacity,
-      color: '#FFD13C'
+      color: '#FFD13C',
     },
   ]
 
-  const handleKeyPress = e => {
-    if(e.key === 'Enter')
-      setStartAnimation(true)
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') setStartAnimation(true)
   }
 
-  return(
+  return (
     <div className={styles.parentContainer}>
-      <a.div className={styles.container}
+      <a.div
+        className={styles.container}
         style={{
           position: 'absolute',
-          left: anim.baseLeft.interpolate(x => `${x}vw`),
-          opacity: anim.baseOpacity
-        }}
-      >
+          left: anim.baseLeft.interpolate((x) => `${x}vw`),
+          opacity: anim.baseOpacity,
+        }}>
         <TypographySVG
           width={width}
           height={height}
@@ -124,42 +125,46 @@ const KineticTypography = () => {
         <a.p
           className={styles.text}
           style={{
-            transform: anim.transform.interpolate((x, y, s) => `translate(${x}px, ${y}px) scale(${s})`),
+            transform: anim.transform.interpolate(
+              (x, y, s) => `translate(${x}px, ${y}px) scale(${s})`
+            ),
             opacity: anim.opacity,
-            userSelect: anim.opacity.interpolate(x => x === 0 ? 'none' : 'text')
-          }}
-        >
-          { anim.text }
+            userSelect: anim.opacity.interpolate((x) =>
+              x === 0 ? 'none' : 'text'
+            ),
+          }}>
+          {anim.text}
         </a.p>
         <a.img
           className={styles.start}
           src={Play}
-          alt='Start tldr;'
-          title='Click to know more about me'
-          tabIndex='1'
+          alt="Start tldr;"
+          title="Click to know more about me"
+          tabIndex="1"
           onKeyPress={handleKeyPress}
           onClick={() => setStartAnimation(true)}
           style={{
             opacity: anim.playOpacity,
-            userSelect: anim.playOpacity.interpolate(x => x === 0 ? 'none' : 'text')
+            userSelect: anim.playOpacity.interpolate((x) =>
+              x === 0 ? 'none' : 'text'
+            ),
           }}
         />
         <a.p
           className={styles.bottomText}
           style={{
             opacity: anim.bottomTextOpacity,
-            userSelect: anim.bottomTextOpacity.interpolate(x => x === 0 ? 'none' : 'text'),
-            color: anim.bottomTextColor
-          }}
-        >
-          { anim.bottomText }
+            userSelect: anim.bottomTextOpacity.interpolate((x) =>
+              x === 0 ? 'none' : 'text'
+            ),
+            color: anim.bottomTextColor,
+          }}>
+          {anim.bottomText}
         </a.p>
       </a.div>
-      {
-        languagesPages.map((language, i) => (
-          <Languages key={i} {...language} />
-        ))
-      }
+      {languagesPages.map((language, i) => (
+        <Languages key={i} {...language} />
+      ))}
     </div>
   )
 }
