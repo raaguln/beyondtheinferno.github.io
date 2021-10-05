@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react"
-import { useTrail, config } from "react-spring"
-import useDarkMode from "use-dark-mode"
-import { getClusterData } from "../utils/getData"
-import { SVG, Icon, Toggle, TLDR } from "../components"
+import React, { useState, useEffect } from 'react'
+import { useTrail, config } from 'react-spring'
+import useDarkMode from 'use-dark-mode'
+import { getClusterData } from '../utils/getData'
+import { SVG, Icon, Toggle, TLDR } from '../components'
 import {
   Linkedin,
   LinkedinLight,
@@ -11,8 +11,8 @@ import {
   Mail,
   MailLight,
   // Resume, ResumeLight,
-} from "../assets/icons"
-import styles from "./LandingPage.module.css"
+} from '../assets/icons'
+import styles from './LandingPage.module.css'
 
 const LandingPage = () => {
   const { value: darkMode, toggle: darkModeToggle } = useDarkMode()
@@ -26,19 +26,19 @@ const LandingPage = () => {
     //   alt: 'Resume'
     // },
     {
-      link: "https://www.linkedin.com/in/raagul-n/",
+      link: 'https://www.linkedin.com/in/raagul-n/',
       icon: darkMode ? LinkedinLight : Linkedin,
-      alt: "LinkedIn",
+      alt: 'LinkedIn',
     },
     {
-      link: "https://github.com/beyondtheinferno",
+      link: 'https://github.com/beyondtheinferno',
       icon: darkMode ? GithubLight : Github,
-      alt: "Github",
+      alt: 'Github',
     },
     {
-      link: "mailto:raagul72@gmail.com",
+      link: 'mailto:beyondtheinfernotech@gmail.com',
       icon: darkMode ? MailLight : Mail,
-      alt: "Email",
+      alt: 'Email',
     },
   ]
 
@@ -65,6 +65,7 @@ const LandingPage = () => {
         })
       }, 3000)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startAnimation])
 
   const svgProps = {

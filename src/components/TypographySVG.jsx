@@ -53,8 +53,8 @@ const TypographySVG = ({ width, height, anim, innerRadius, interpolator }) => {
       aria-label="[title + description]">
       <title>Raagul N</title>
       <desc>
-        Welcome to my homepage! Click on tl;dr to know more about me, or visit
-        my socials by clicking on the icons below.
+        Welcome to my homepage! Click on too long don't read button to know more
+        about me, or visit my socials by clicking on the icons below.
       </desc>
       <defs>
         <radialGradient id="coolBlue">

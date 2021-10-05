@@ -47,6 +47,7 @@ const KineticTypography = () => {
           },
         ],
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startAnimation])
 
   const interpolator = interpolate(paths[0], paths[1])
