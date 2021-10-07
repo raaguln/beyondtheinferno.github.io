@@ -50,11 +50,10 @@ const TypographySVG = ({ width, height, anim, innerRadius, interpolator }) => {
       viewBox={`0, 0, ${width}, ${height}`}
       preserveAspectRatio="xMidYMid meet"
       role="img"
-      aria-label="[title + description]">
-      <title>Raagul N</title>
+      aria-label="Click play to learn more about me!">
+      <title>About Me</title>
       <desc>
-        Welcome to my homepage! Click on too long don't read button to know more
-        about me, or visit my socials by clicking on the icons below.
+        Click on the play button and just follow along to know more about me!
       </desc>
       <defs>
         <radialGradient id="coolBlue">

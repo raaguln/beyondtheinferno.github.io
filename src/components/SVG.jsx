@@ -1,6 +1,6 @@
-import React from "react"
-import { Name } from "."
-import styles from "./SVG.module.css"
+import React from 'react'
+import { Name } from '.'
+import styles from './SVG.module.css'
 
 const SVG = ({ circles, color, darkMode, startAnimation }) => {
   const width = 800,
@@ -12,7 +12,14 @@ const SVG = ({ circles, color, darkMode, startAnimation }) => {
     <svg
       className={styles.svg}
       viewBox={`0, 0, ${width}, ${height}`}
-      preserveAspectRatio="xMidYMid meet">
+      preserveAspectRatio="xMidYMid meet"
+      role="img"
+      aria-label="Hi! I'm Raagul N.">
+      <title id="myNameTitle">Raagul N</title>
+      <desc id="myDescription">
+        Welcome to my homepage! Click on too long don't read button to know more
+        about me, or visit my socials by clicking on the icons below.
+      </desc>
       <defs>
         <clipPath id="myName">
           <Name darkMode={false} />
@@ -22,7 +29,7 @@ const SVG = ({ circles, color, darkMode, startAnimation }) => {
       <g
         className={styles.circleContainer}
         style={{
-          isolation: "isolate",
+          isolation: 'isolate',
         }}>
         {circles.map(({ x, y, r }, i) => (
           <circle
@@ -34,7 +41,7 @@ const SVG = ({ circles, color, darkMode, startAnimation }) => {
             r={startAnimation ? r : 0}
             fill={color(getRandomArbitrary(0, 7))}
             style={{
-              mixBlendMode: darkMode ? "multiply" : "screen",
+              mixBlendMode: darkMode ? 'multiply' : 'screen',
             }}
           />
         ))}

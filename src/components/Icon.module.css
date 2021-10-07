@@ -7,6 +7,7 @@
 
 .icon {
   width: 5vmin;
+  min-width: 20px;
   padding: 0.3rem 1rem;
   cursor: pointer;
 }
@@ -24,7 +25,7 @@
 }
 
 .container:nth-child(3):hover {
-  background-color: #FF8C5072;
+  background-color: #ff8c5072;
 }
 
 /* 

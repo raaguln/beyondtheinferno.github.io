@@ -1,0 +1,24 @@
+.button {
+  /* Reset default CSS */
+  border: none;
+  margin: 0 1.8vmin 0 0;
+  text-decoration: none;
+  font-family: 'Poppins';
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Styling */
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vmax;
+  height: 6vmin;
+  min-width: 65px;
+  min-height: 40px;
+  font-size: calc(10px + 1vmin);
+  font-weight: 400;
+  transition: color 0.1s ease-in;
+}

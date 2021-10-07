@@ -6,6 +6,7 @@ import styles from './App.module.css'
 
 const LandingPage = lazy(() => import('./pages/LandingPage'))
 const KineticTypography = lazy(() => import('./pages/KineticTypography'))
+const Work = lazy(() => import('./pages/Work'))
 
 const App = () => {
   const location = useLocation()
@@ -21,6 +22,7 @@ const App = () => {
         <Switch location={location}>
           <Route exact path="/" component={LandingPage} />
           <Route path="/summary" component={KineticTypography} />
+          <Route path="/work" component={Work} />
         </Switch>
       </a.div>
     </Suspense>

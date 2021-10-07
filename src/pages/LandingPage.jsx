@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTrail, config } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
 import { getClusterData } from '../utils/getData'
-import { SVG, Icon, Toggle, TLDR } from '../components'
+import { SVG, Icon, Toggle, NavButton } from '../components'
 import {
   Linkedin,
   LinkedinLight,
@@ -21,24 +21,24 @@ const LandingPage = () => {
 
   const icons = [
     // {
-    //   link: 'https://drive.google.com/file/d/1RMoZEVQuJljZB_KlZZOJ3uvVum8NMav4/view',
+    //   link: '',
     //   icon: darkMode ? ResumeLight : Resume,
     //   alt: 'Resume'
     // },
     {
       link: 'https://www.linkedin.com/in/raagul-n/',
       icon: darkMode ? LinkedinLight : Linkedin,
-      alt: 'LinkedIn',
+      alt: 'Click to see my LinkedIn.',
     },
     {
       link: 'https://github.com/beyondtheinferno',
       icon: darkMode ? GithubLight : Github,
-      alt: 'Github',
+      alt: 'Click to see my Github.',
     },
     {
       link: 'mailto:beyondtheinfernotech@gmail.com',
       icon: darkMode ? MailLight : Mail,
-      alt: 'Email',
+      alt: ' Click to contact me through my email.',
     },
   ]
 
@@ -75,18 +75,33 @@ const LandingPage = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.topRightContainer}>
-        <TLDR darkMode={darkMode} />
+    <>
+      <nav className={styles.topRightContainer}>
+        <NavButton
+          darkMode={darkMode}
+          text="tl;dr"
+          url="/summary"
+          bgColor="#8338ec72"
+          aria="Click to know more about me."
+        />
+        <NavButton
+          darkMode={darkMode}
+          text="Work"
+          url="/work"
+          bgColor="#ffbe0b72"
+          aria="Click to know more about my work."
+        />
         <Toggle darkMode={darkMode} darkModeToggle={darkModeToggle} />
-      </div>
-      <SVG {...svgProps} />
-      <div className={styles.links}>
-        {icons.map((icon, i) => (
-          <Icon key={i} {...icon} spring={springs[i]} />
-        ))}
-      </div>
-    </div>
+      </nav>
+      <main className={styles.container}>
+        <SVG {...svgProps} />
+        <div className={styles.links}>
+          {icons.map((icon, i) => (
+            <Icon key={i} {...icon} spring={springs[i]} />
+          ))}
+        </div>
+      </main>
+    </>
   )
 }
 
