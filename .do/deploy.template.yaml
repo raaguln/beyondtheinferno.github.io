@@ -1,7 +1,0 @@
-spec:
- name: beyondtheinferno-v2-clone
- static_sites:
- - git:
-     branch: main
-     repo_clone_url: https://github.com/beyondtheinferno/beyondtheinferno-v2.git
-   name: beyondtheinferno-v2-clone
