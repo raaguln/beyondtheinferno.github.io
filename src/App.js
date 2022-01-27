@@ -20,7 +20,7 @@ const App = () => {
     <Suspense fallback={<Fallback />}>
       <a.div key={key} className={styles.App} style={props}>
         <Switch location={location}>
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/me" component={LandingPage} />
           <Route path="/summary" component={KineticTypography} />
           <Route path="/work" component={Work} />
         </Switch>

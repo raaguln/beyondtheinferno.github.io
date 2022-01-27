@@ -46,7 +46,7 @@ const Work = () => {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <Link className={styles.home} to="/">
+        <Link className={styles.home} to="/me">
           <img
             className={styles.homeIcon}
             src={darkMode ? HomeLight : Home}
