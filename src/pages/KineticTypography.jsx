@@ -18,6 +18,7 @@ import {
   WebpackLogo,
   PythonLogo,
 } from '../assets/logos'
+import routes from '../routes'
 
 const KineticTypography = () => {
   const width = window.innerWidth,
@@ -42,7 +43,7 @@ const KineticTypography = () => {
           {
             dummyVal: 15,
             onRest: () => {
-              history.push('/')
+              history.push(routes.home)
             },
           },
         ],

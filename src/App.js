@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { useTransition, animated as a } from 'react-spring'
 import { Fallback } from './pages'
+import routes from './routes'
 import styles from './App.module.css'
 
 const LandingPage = lazy(() => import('./pages/LandingPage'))
@@ -20,9 +21,9 @@ const App = () => {
     <Suspense fallback={<Fallback />}>
       <a.div key={key} className={styles.App} style={props}>
         <Switch location={location}>
-          <Route exact path="/me" component={LandingPage} />
-          <Route path="/summary" component={KineticTypography} />
-          <Route path="/work" component={Work} />
+          <Route exact path={routes.home} component={LandingPage} />
+          <Route path={routes.summary} component={KineticTypography} />
+          <Route path={routes.work} component={Work} />
         </Switch>
       </a.div>
     </Suspense>

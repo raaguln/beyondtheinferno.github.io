@@ -8,6 +8,7 @@ import {
   ExternalLinkLight,
 } from '../assets/icons'
 import { MWTW, WhatAYear, Quiz } from '../assets/images'
+import routes from '../routes'
 import styles from './Work.module.css'
 
 const Work = () => {
@@ -46,7 +47,7 @@ const Work = () => {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <Link className={styles.home} to="/me">
+        <Link className={styles.home} to={routes.home}>
           <img
             className={styles.homeIcon}
             src={darkMode ? HomeLight : Home}
