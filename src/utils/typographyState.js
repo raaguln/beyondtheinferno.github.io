@@ -5,7 +5,7 @@ const width = window.innerWidth,
 
 const superFast = { mass: 1, tension: 200, friction: 21, clamp: true },
   fast = config.default,
-  medium = config.stiff,
+  medium = config.default,
   mediumSlow = config.gentle,
   slow = config.slow,
   superSlow = config.molasses
@@ -16,7 +16,7 @@ export const initialTypographyStates = {
   transform: [0, 0, 1.8],
   text: 'Hey!',
   opacity: 0,
-  bottomText: 'Doubts? This whole website is proof :P',
+  bottomText: 'Can do both ends :)',
   bottomTextTransform: [0, 0],
   bottomTextOpacity: 0,
   bottomTextColor: '#fafafa',
@@ -46,10 +46,11 @@ export const initialTypographyStates = {
 export const typographyState = [
   {
     playOpacity: 0,
-    config: fast,
+    config: superFast,
   },
   {
     opacity: 1,
+    config: fast,
   },
   {
     transform: [-1, 0, 1],
@@ -63,18 +64,8 @@ export const typographyState = [
     config: superFast,
   },
   {
-    transform: [-4, 0, 1],
-    text: "I'm Raagul N",
-    config: slow,
-  },
-  {
     transform: [-8, 0, 1],
     text: "I'm Raagul Nagendran",
-    config: medium,
-  },
-  {
-    transform: [-6, 0, 1],
-    text: "I'm Raagul N",
     config: slow,
   },
   // FRONT END DEVELOPER
@@ -91,67 +82,69 @@ export const typographyState = [
   {
     transform: [-4, 0, 1],
     text: 'I am a',
-    config: medium,
+    config: fast,
   },
   {
     transform: [0, 0, 1],
-    text: 'Front End Developer',
-    config: slow,
+    text: 'Full Stack Developer',
+    config: fast,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow,
+    config: slow,
   },
+  { dummyVal: 20, config: medium },
   {
     transform: [0, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: superFast,
   },
   // DATA VISUALISATION
   {
     transform: [0, 0, 1],
     text: 'Data Visualisation Engineer',
-    bottomText: 'You still doubt me?',
+    bottomText: 'You doubt me?',
     immediate: true,
   },
   {
     opacity: 1,
-    config: slow,
+    config: fast,
     immediate: false,
   },
   {
     bottomTextOpacity: 1,
     config: superSlow,
   },
+  { dummyVal: 40, config: medium },
   {
     transform: [0, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: fast,
   },
   // RADIAL CHART
   {
     r: Math.ceil(Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height / 2, 2))),
-    config: slow,
+    config: fast,
   },
   {
     chartOpacity: 1,
-    config: mediumSlow,
+    config: medium,
   },
   {
     radialAreaLabel: 1,
-    config: superSlow,
-  },
-  {
-    chartPath: 1,
-    config: superSlow,
+    config: medium,
   },
   {
     radialAreaX: 1,
-    config: superSlow,
+    config: medium,
+  },
+  {
+    chartPath: 1,
+    config: slow,
   },
   {
     bottomText: 'WFH + music is :)',
@@ -164,80 +157,20 @@ export const typographyState = [
     immediate: false,
   },
   {
-    dummyVal: 20,
-    config: superSlow,
+    dummyVal: 60,
+    config: slow,
   },
   {
     transform: [0, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
-  },
-  {
     r: 0,
     chartOpacity: 0,
     radialAreaLabel: 0,
     chartPath: 0,
     radialAreaX: 0,
-    config: slow,
-  },
-  // BACKEND DEVELOPER
-  {
-    transform: [0, 0, 1],
-    text: 'Backend Developer',
-    config: slow,
-    immediate: true,
-  },
-  {
-    opacity: 1,
-    config: slow,
-    immediate: false,
-  },
-  {
-    transform: [-4, 0, 1],
-    text: 'Backend Developer?',
-  },
-  {
-    transform: [0, 0, 1],
-    text: 'Backend Developer',
-  },
-  {
-    transform: [-1, 0, 1],
-    text: 'Backend Developer.',
-    config: superFast,
-  },
-  {
-    transform: [-2, 0, 1],
-    text: 'Backend Developer..',
-    config: superFast,
-  },
-  {
-    transform: [-3, 0, 1],
-    text: 'Backend Developer...',
-    config: slow,
-  },
-  {
-    bottomText: 'In progress',
-    bottomTextColor: '#fafafa',
-    immediate: true,
-  },
-  {
-    bottomTextOpacity: 1,
-    config: superSlow,
-    immediate: false,
-  },
-  {
-    transform: [0, -20, 1],
-    opacity: 0,
-    bottomTextTransform: [0, -10],
-    bottomTextOpacity: 0,
-    config: medium,
-  },
-  {
-    transform: [-1, 0, 1],
-    bottomTextTransform: [0, 0],
-    immediate: true,
+    config: fast,
   },
   // LANGUAGES
   {
@@ -250,7 +183,7 @@ export const typographyState = [
   {
     transform: [-2, 0, 1],
     text: 'I speak',
-    config: slow,
+    config: medium,
   },
   {
     baseLeft: -50,
@@ -299,6 +232,7 @@ export const typographyState = [
     baseOpacity: 0,
     transform: [-2, 0, 1],
     text: 'And lots more',
+    bottomTextColor: '#fafafa',
     immediate: true,
   },
   {
@@ -312,6 +246,7 @@ export const typographyState = [
   {
     transform: [-1, 0, 1],
     text: 'And lots more.',
+    bottomText: 'Like ML, AI, Game Dev',
     config: superFast,
   },
   {
@@ -322,23 +257,19 @@ export const typographyState = [
   {
     transform: [-3, 0, 1],
     text: 'And lots more...',
-    config: slow,
-  },
-  {
-    bottomText: 'Flutter, Django are loading...',
-    immediate: true,
+    config: superFast,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow,
-    immediate: false,
+    config: slow,
   },
+  { dummyVal: 40, config: medium },
   {
     transform: [0, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: superFast,
   },
   // I COULD HAVE TOLD YOU THIS
   {
@@ -380,18 +311,19 @@ export const typographyState = [
   {
     text: 'I could have told you all this',
     transform: [6, 0, 1],
-    config: slow,
+    config: fast,
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow,
+    config: slow,
   },
+  { dummyVal: 60, config: medium },
   {
     transform: [6, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: superFast,
   },
 
   // BUT WHAT'S TEH FUN IN THAT
@@ -433,14 +365,15 @@ export const typographyState = [
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow,
+    config: slow,
   },
+  { dummyVal: 80, config: medium },
   {
     transform: [4, -20, 1],
     opacity: 0,
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: superFast,
   },
   // FINALE
   {
@@ -491,12 +424,13 @@ export const typographyState = [
   },
   {
     bottomTextOpacity: 1,
-    config: superSlow,
+    config: slow,
   },
+  { dummyVal: 100, config: medium },
   {
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    config: medium,
+    config: superFast,
   },
   {
     text: 'So, you want to hire me',
@@ -526,12 +460,12 @@ export const typographyState = [
   {
     text: 'So, you want to contact me?',
     transform: [0, 0, 1],
-    config: slow,
+    config: superFast,
   },
   {
     bottomTextTransform: [0, -10],
     bottomTextOpacity: 0,
-    bottomText: 'Deets in homepage, redirecting...',
+    bottomText: 'Details in homepage, redirecting...',
     immediate: true,
   },
   {
@@ -539,7 +473,5 @@ export const typographyState = [
     immediate: false,
     config: slow,
   },
-  {
-    config: fast,
-  },
+  { dummyVal: 120, config: medium },
 ]
