@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useTrail, config } from 'react-spring'
 import useDarkMode from 'use-dark-mode'
 import { getClusterData } from '../utils/getData'
 import { SVG, Icon, Toggle, NavButton } from '../components'
@@ -44,29 +43,11 @@ const LandingPage = () => {
 
   const [startAnimation, setStartAnimation] = useState(false)
 
-  const [springs, setSprings] = useTrail(icons.length, () => ({
-    transform: -20,
-    opacity: 0,
-    config: config.molasses,
-  }))
-
   useEffect(() => {
     setTimeout(() => {
       setStartAnimation(true)
     }, 500)
   }, [])
-
-  useEffect(() => {
-    if (startAnimation) {
-      setTimeout(() => {
-        setSprings({
-          transform: 0,
-          opacity: 1,
-        })
-      }, 3000)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [startAnimation])
 
   const svgProps = {
     ...data,
@@ -97,7 +78,7 @@ const LandingPage = () => {
         <SVG {...svgProps} />
         <div className={styles.links}>
           {icons.map((icon, i) => (
-            <Icon key={i} {...icon} spring={springs[i]} />
+            <Icon key={i} {...icon} />
           ))}
         </div>
       </main>

@@ -6,7 +6,7 @@ const width = window.innerWidth,
 const superFast = { mass: 1, tension: 200, friction: 21, clamp: true },
   fast = config.default,
   medium = config.default,
-  mediumSlow = config.gentle,
+  // mediumSlow = config.gentle,
   slow = config.slow,
   superSlow = config.molasses
 
